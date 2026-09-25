@@ -66,7 +66,7 @@ cd Caesar_Cipher
 ls
 ```
 
-These commands create the main `CodecraftInfotech` directory and a separate `Task_01_Caesar_Cipher` directory for the project.
+These commands create the main `Mini_Projects` directory and a separate `Caesar_Cipher` directory for the project.
 
 ![Terminal showing the project directory creation and navigation](images/03-project-directory-creation.png)
 *Screenshot 3: Terminal showing the project directory creation and navigation.*
@@ -186,13 +186,13 @@ python3 caesar_cipher.py
 1. Encrypt
 2. Decrypt
 Enter your choice (1/2): 2
-Enter your message: KHOOR
+Enter your message: KHOOR ZRUOG
 Enter the shift value: 3
-Decrypted message: HELLO
+Decrypted message: HELLO WORLD
 ```
 
 ![Caesar Cipher program successfully decrypting KHOOR ZRUOG back to HELLO](images/08-decryption-khoor-zruog.png)
-*Screenshot 8: Caesar Cipher program successfully decrypting KHOOR ZRUOG back to HELLO.*
+*Screenshot 8: Caesar Cipher program successfully decrypting KHOOR ZRUOG back to HELLO WORLD.*
 
 ### 6. Important Concept
 
@@ -377,7 +377,7 @@ This prevents the program from crashing if the user enters non-numeric input suc
 
 **Result:** The Caesar Cipher program has been enhanced with continuous execution, menu validation, shift-value validation, and an Exit option. The user can now perform multiple encryption and decryption operations within a single program session while invalid inputs are handled safely.
 
-## 5. Conclusion
+## ✅ Conclusion
 
 This project successfully demonstrates the design and implementation of a Caesar Cipher encryption and decryption tool using Python on a Kali Linux environment. Starting from environment setup and basic implementation, the program was progressively improved to include a user-friendly menu, robust input validation, and an exit option, resulting in a stable and reusable command-line application.
 
