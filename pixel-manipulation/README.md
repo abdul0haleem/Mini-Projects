@@ -878,7 +878,7 @@ ls Images/Output
 
 The terminal should display:
 
-```text id="r5n9q1"
+```
 encrypted_image.png
 decrypted_image.png
 ```
@@ -891,13 +891,13 @@ decrypted_image.png
 
 Open the `Images/Output` directory and open:
 
-```text id="a7d4k2"
+```
 decrypted_image.png
 ```
 
 Compare it with the original image:
 
-```text id="x9p3h6"
+```
 Images/wallpaperswide.com-macaw-parrot-wallpaper-1920x1080.jpg
 ```
 
