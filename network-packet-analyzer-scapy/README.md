@@ -60,6 +60,8 @@ The terminal should display:
 
 ### Step 2 — Check Python Installation
 
+--
+
 #### Objective
 
 Verify that Python 3 is installed and working correctly on Kali Linux before developing the **Network Packet Analyzer**. Python will be used to create the packet capture and analysis program.
