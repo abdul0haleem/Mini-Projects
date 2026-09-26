@@ -4,7 +4,7 @@ A Python-based **Network Packet Analyzer** developed using **Scapy** on Kali Lin
 
 ## ⚙️ Project Implementation
 
-### Step 1 — Create the Project Directory
+## Step 1 — Create the Project Directory
 
 #### Objective
 
@@ -58,7 +58,7 @@ The terminal should display:
 
 ---
 
-### Step 2 — Check Python Installation
+## Step 2 — Check Python Installation
 
 #### Objective
 
@@ -213,6 +213,8 @@ The file will initially be empty.
 ![Packet analyzer Nano editor](images/09-packet-analyzer-nano-editor.png)
 
 *Screenshot 9: Nano editor showing the newly created `packet_analyzer.py` file.*
+
+---
 
 ### Step 5 — Write the Basic Packet Capture Program
 
