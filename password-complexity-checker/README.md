@@ -66,3 +66,47 @@ The `pwd` command confirms the current working directory.
 ![Current Project Directory](images/03-current-directory.png)
 
 *Screenshot 3: Showing the current directory.*
+
+## Step 2 — Create the Python File
+
+### Objective
+
+Create the Python source file that will contain the **Password Complexity Checker** program.
+
+### 1. Navigate to the Project Directory
+
+Make sure you are inside the **Password Complexity Checker** project directory.
+
+Run:
+
+```bash
+cd Password_Complexity_Checker
+```
+
+### 2. Create the Python File
+
+Run:
+
+```bash
+touch password_checker.py
+```
+
+This creates an empty Python file named `password_checker.py`.
+
+### 3. Verify the Python File
+
+Run:
+
+```bash
+ls
+```
+
+You should see:
+
+```text
+password_checker.py
+```
+
+![Python File Created](images/04-password-checker-file-created.png)
+
+*Screenshot 4: Terminal showing the creation of `password_checker.py` and the `ls` command displaying the newly created Python file.*
