@@ -77,12 +77,6 @@ Create the Python source file that will contain the **Password Complexity Checke
 
 Make sure you are inside the **Password Complexity Checker** project directory.
 
-Run:
-
-```bash
-cd Password_Complexity_Checker
-```
-
 ### 2. Create the Python File
 
 Run:
