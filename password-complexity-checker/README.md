@@ -383,5 +383,114 @@ python3 password_checker.py
 Test it with:
 
 ```text id="c4qz9b"
-Enter your password: Te
+Enter your password: TestPassword123!
+
+Length requirement: Passed
+Uppercase letter requirement: Passed
+Lowercase letter requirement: Passed
+Number requirement: Passed
+Special character requirement: Passed
 ```
+
+![All Password Requirements](images/10-all-password-requirements-check.png)
+
+*Screenshot 10: Terminal showing the Password Complexity Checker testing a password and displaying the **length, uppercase, lowercase, number, and special character requirements**.*
+
+## Step 7 — Calculate the Password Strength Score
+
+### Objective
+
+Combine the password complexity checks into a **strength score**. Each requirement that is successfully satisfied will add one point to the total score.
+
+The five criteria are:
+
+1. Minimum length of 8 characters
+2. Uppercase letter
+3. Lowercase letter
+4. Number
+5. Special character
+
+### 1. Open the Python File
+
+From inside the project directory, run:
+
+```bash
+nano password_checker.py
+```
+
+### 2. Replace the Existing Code
+
+Replace the existing code with:
+
+```python
+password = input("Enter your password: ")
+
+score = 0
+
+if len(password) >= 8:
+    print("Length requirement: Passed")
+    score += 1
+else:
+    print("Length requirement: Failed")
+
+if any(char.isupper() for char in password):
+    print("Uppercase letter requirement: Passed")
+    score += 1
+else:
+    print("Uppercase letter requirement: Failed")
+
+if any(char.islower() for char in password):
+    print("Lowercase letter requirement: Passed")
+    score += 1
+else:
+    print("Lowercase letter requirement: Failed")
+
+if any(char.isdigit() for char in password):
+    print("Number requirement: Passed")
+    score += 1
+else:
+    print("Number requirement: Failed")
+
+if any(not char.isalnum() for char in password):
+    print("Special character requirement: Passed")
+    score += 1
+else:
+    print("Special character requirement: Failed")
+
+print("Password Strength Score:", score, "/ 5")
+```
+
+### 3. Save the File
+
+In Nano:
+
+* Press **Ctrl + O** to save the file.
+* Press **Enter** to confirm the filename.
+* Press **Ctrl + X** to exit Nano.
+
+### 4. Run the Python Program
+
+Run:
+
+```bash
+python3 password_checker.py
+```
+
+Test it with:
+
+```text
+Enter your password: TestPassword123!
+
+Length requirement: Passed
+Uppercase letter requirement: Passed
+Lowercase letter requirement: Passed
+Number requirement: Passed
+Special character requirement: Passed
+Password Strength Score: 5 / 5
+```
+
+The `score` variable starts at `0`. Each time a password requirement is satisfied, `score += 1` increases the score by one.
+
+![Password Strength Score](images/11-password-strength-score-5-of-5.png)
+
+*Screenshot 11: Terminal showing the Password Complexity Checker testing a password and displaying the individual requirements along with the final **Password Strength Score: 5 / 5**.*
