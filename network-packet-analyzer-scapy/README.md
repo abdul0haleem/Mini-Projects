@@ -102,7 +102,7 @@ The terminal should display a path similar to:
 
 *Screenshot 5: Terminal showing the location of the Python 3 executable.*
 
-### Step 3 — Install and Verify Scapy
+## Step 3 — Install and Verify Scapy
 
 #### Objective
 
@@ -162,7 +162,7 @@ Scapy is ready for packet capture
 
 ---
 
-### Step 4 — Create the Python Packet Analyzer File
+## Step 4 — Create the Python Packet Analyzer File
 
 #### Objective
 
@@ -216,7 +216,7 @@ The file will initially be empty.
 
 ---
 
-### Step 5 — Write the Basic Packet Capture Program
+## Step 5 — Write the Basic Packet Capture Program
 
 #### Objective
 
@@ -285,7 +285,7 @@ The `sniff()` function continuously captures packets and sends each packet to `a
 
 ---
 
-### Step 6 — Run and Test the Packet Analyzer
+## Step 6 — Run and Test the Packet Analyzer
 
 #### Objective
 
@@ -354,7 +354,7 @@ The packet capture will stop and return to the terminal prompt.
 
 *Screenshot 14: Terminal showing the packet analyzer stopped using Ctrl+C.*
 
-### Step 7 — Improve Packet Analysis
+## Step 7 — Improve Packet Analysis
 
 #### Objective
 
@@ -427,7 +427,7 @@ This makes the analyzer more useful for basic network traffic investigation.
 
 ---
 
-### Step 8 — Test TCP and UDP Packet Analysis
+## Step 8 — Test TCP and UDP Packet Analysis
 
 #### Objective
 
@@ -538,7 +538,9 @@ For reference:
 
 The exact IP addresses and source ports will vary depending on your network connection and generated traffic.
 
-### Step 9 — Add Payload Data Analysis
+---
+
+## Step 9 — Add Payload Data Analysis
 
 #### Objective
 
@@ -624,7 +626,9 @@ Payload Data    : No payload
 
 Limiting the output to the first 100 bytes keeps the terminal readable and prevents large packet contents from flooding the screen.
 
-### Step 10 — Test Payload Data Analysis
+---
+
+## Step 10 — Test Payload Data Analysis
 
 #### Objective
 
@@ -729,7 +733,7 @@ Next, packet numbering and timestamp information can be added to make the analyz
 
 ---
 
-### Step 11 — Add Packet Numbering and Timestamp
+## Step 11 — Add Packet Numbering and Timestamp
 
 #### Objective
 
@@ -836,7 +840,9 @@ Payload Length  : 32 bytes
 
 The packet number starts at **1** each time the program is started and increases for every IP packet processed.
 
-### Step 12 — Test Packet Numbering and Timestamp
+---
+
+## Step 12 — Test Packet Numbering and Timestamp
 
 #### Objective
 
