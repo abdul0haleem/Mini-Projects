@@ -32,6 +32,10 @@ mkdir Password_Complexity_Checker
 
 This creates a new project directory in the current home directory.
 
+![New Project Folder Created](images/02-project-folder-created.png)
+
+*Screenshot 2: Showing the new folder created.*
+
 ### 3. Navigate into the Project Directory
 
 Run:
@@ -42,10 +46,6 @@ ls
 ```
 
 The `cd` command navigates into the newly created project directory, while the `ls` command displays its contents.
-
-![New Project Folder Created](images/02-project-folder-created.png)
-
-*Screenshot 2: Showing the new folder created.*
 
 ### 4. Verify the Current Directory
 
