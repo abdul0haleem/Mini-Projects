@@ -2,6 +2,43 @@
 
 A Python-based **Network Packet Analyzer** developed using **Scapy** on Kali Linux. The project captures live network traffic and progressively analyzes packets by identifying protocols, IP addresses, port numbers, payload information, packet numbers, and timestamps.
 
+## 📖 Project Overview
+
+The **Network Packet Analyzer** is a Python-based network traffic analysis tool developed using **Scapy** on **Kali Linux**. The project captures live network packets and extracts useful information such as source and destination IP addresses, protocol names, TCP/UDP port numbers, payload information, packet numbers, and timestamps.
+
+The analyzer also includes **packet logging** functionality, allowing captured information to be saved to `packet_log.txt` for later analysis. An interactive command-line menu provides options to start packet capture or exit the application.
+
+The project was developed and tested in a controlled virtualized lab environment using **Kali Linux running in VirtualBox**.
+
+## 🎯 Project Objective
+
+The main objectives of this project are to:
+
+* Develop a basic network packet analyzer using Python and Scapy.
+* Capture and analyze live network traffic.
+* Identify source and destination IP addresses.
+* Identify common protocols such as **TCP, UDP, and ICMP**.
+* Display TCP and UDP source and destination ports.
+* Analyze basic packet payload information.
+* Record packet numbers and timestamps.
+* Save captured packet information to a log file.
+* Provide an interactive command-line interface for controlling packet capture.
+* Gain practical experience with network traffic analysis and cybersecurity monitoring concepts.
+
+## 🛠️ Tools and Technologies
+
+| Category             | Tools / Technologies              |
+| -------------------- | --------------------------------- |
+| Operating System     | Kali Linux                        |
+| Virtualization       | Oracle VirtualBox                 |
+| Programming Language | Python 3                          |
+| Packet Analysis      | Scapy                             |
+| Network Protocols    | TCP, UDP, ICMP, DNS               |
+| Network Testing      | `ping`, `curl`, `nslookup`        |
+| Text Editor          | Nano                              |
+| Logging              | Python File I/O, `packet_log.txt` |
+| Version Control      | Git / GitHub                      |
+
 ## ⚙️ Project Implementation
 
 ## Step 1 — Create the Project Directory
@@ -35,6 +72,7 @@ cd ~/Mini_Projects/Network_Packet_Analyzer
 ```
 
 ![Project directory creation and navigation](images/02-project-directory-creation-navigation.png)
+
 
 *Screenshot 2: Terminal showing the project directory creation and navigation.*
 
@@ -944,4 +982,600 @@ The analyzer should now provide a structured view of captured packets containing
 * **Destination Port**
 * **Payload Length**
 * **Payload Data**
+
+### Step 13 — Save Packet Information to a Log File
+
+#### Objective
+
+Modify the **Network Packet Analyzer** so that captured packet information is not only displayed in the terminal but also **saved to a log file**. This allows the captured information to be reviewed later for analysis and troubleshooting.
+
+#### 1. Open the Python File
+
+Run the following command:
+
+```bash
+nano ~/Mini_Projects/Network_Packet_Analyzer/packet_analyzer.py
+```
+
+#### 2. Replace the Existing Code
+
+Replace the previous code with the updated version that includes packet logging functionality.
+
+```python
+from scapy.all import sniff, IP, TCP, UDP, Raw
+from datetime import datetime
+
+packet_count = 0
+log_file = "packet_log.txt"
+
+def write_to_log(message):
+    with open(log_file, "a") as file:
+        file.write(message + "\n")
+
+def analyze_packet(packet):
+    global packet_count
+    packet_count += 1
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    if IP in packet:
+        source_ip = packet[IP].src
+        destination_ip = packet[IP].dst
+        protocol = packet[IP].proto
+
+        packet_info = []
+
+        packet_info.append("\n--- Packet Captured ---")
+        packet_info.append(f"Packet Number   : {packet_count}")
+        packet_info.append(f"Timestamp       : {timestamp}")
+        packet_info.append(f"Source IP       : {source_ip}")
+        packet_info.append(f"Destination IP  : {destination_ip}")
+        packet_info.append(f"Protocol        : {protocol}")
+
+        if TCP in packet:
+            packet_info.append(f"Source Port     : {packet[TCP].sport}")
+            packet_info.append(f"Destination Port: {packet[TCP].dport}")
+
+        elif UDP in packet:
+            packet_info.append(f"Source Port     : {packet[UDP].sport}")
+            packet_info.append(f"Destination Port: {packet[UDP].dport}")
+
+        if Raw in packet:
+            payload = bytes(packet[Raw].load)
+            packet_info.append(f"Payload Length  : {len(payload)} bytes")
+            packet_info.append(f"Payload Data    : {payload[:100]!r}")
+
+        else:
+            packet_info.append("Payload Data    : No payload")
+
+        output = "\n".join(packet_info)
+
+        print(output)
+        write_to_log(output)
+
+print("Starting Network Packet Analyzer...")
+print("Capturing packets. Press Ctrl+C to stop.")
+print(f"Packet information will be saved to: {log_file}")
+
+sniff(prn=analyze_packet, store=False)
+```
+
+#### 3. Save the File
+
+In Nano:
+
+1. Press **Ctrl + O** to save the file.
+2. Press **Enter** to confirm the filename.
+3. Press **Ctrl + X** to exit Nano.
+
+![Packet logging code](images/29-packet-logging-code.png)
+
+*Screenshot 29: Nano editor showing the updated packet analyzer code with packet logging functionality.*
+
+#### What Was Added
+
+The program now creates a log file named `packet_log.txt` and stores captured packet information in it. Every captured IP packet is displayed in the terminal and simultaneously appended to the log file, including the packet number, timestamp, IP addresses, protocol, port information, and payload details. The log file is automatically created inside the project directory, and any new packet information is appended instead of overwriting existing entries.
+
+---
+
+### Step 14 — Test Packet Logging
+
+#### Objective
+
+Run the updated **Network Packet Analyzer**, generate network traffic, and verify that captured packet information is saved successfully to the `packet_log.txt` file.
+
+#### 1. Start the Packet Analyzer
+
+Navigate to the project directory:
+
+```bash
+cd ~/Mini_Projects/Network_Packet_Analyzer
+```
+
+Run the analyzer:
+
+```bash
+sudo python3 packet_analyzer.py
+```
+
+The terminal should display:
+
+```text
+Starting Network Packet Analyzer...
+Capturing packets. Press Ctrl+C to stop.
+Packet information will be saved to: packet_log.txt
+```
+
+#### 2. Generate Network Traffic
+
+Open a second terminal and generate ICMP traffic:
+
+```bash
+ping -c 4 8.8.8.8
+```
+
+The analyzer captures the packets and displays their information in the terminal.
+
+#### 3. Stop the Analyzer
+
+Return to the analyzer terminal and press:
+
+```text
+Ctrl + C
+```
+
+#### 4. Verify the Log File
+
+Check that the log file has been created:
+
+```bash
+ls -l packet_log.txt
+```
+
+![Packet log file created](images/30-packet-log-file-created.png)
+
+*Screenshot 30: Terminal showing the `packet_log.txt` file created in the project directory.*
+
+#### 5. View the Saved Packet Information
+
+Display the contents of the log file:
+
+```bash
+cat packet_log.txt
+```
+
+Example output:
+
+```text
+--- Packet Captured ---
+
+Packet Number   : 1
+Timestamp       : 2026-09-28 20:05:21
+Source IP       : 192.168.x.x
+Destination IP  : 8.8.8.8
+Protocol        : 1
+Payload Length  : 32 bytes
+Payload Data    : b'...'
+```
+
+![Packet log output](images/31-packet-log-file-output.png)
+
+*Screenshot 31: Terminal displaying the saved packet information from `packet_log.txt`.*
+
+#### 6. Verify the Project Files
+
+List the files in the project directory:
+
+```bash
+ls -la
+```
+
+The project directory should now contain at least:
+
+* `packet_analyzer.py`
+* `packet_log.txt`
+
+![Completed project files](images/32-completed-project-files.png)
+
+*Screenshot 32: Terminal showing the completed project files, including the Python program and packet log.*
+
+#### Result
+
+The **Network Packet Analyzer** now captures network packets, displays packet information in real time, records packet numbers and timestamps, analyzes TCP/UDP ports and payload data, and automatically saves the captured information to `packet_log.txt` for later review.
+
+### Step 15 — Display Human-Readable Protocol Names
+
+#### Objective
+
+Improve the **Network Packet Analyzer** by displaying **protocol names** such as **TCP, UDP, and ICMP** instead of only their numerical protocol values. This makes the captured packet information easier to understand.
+
+#### 1. Open the Python File
+
+Run:
+
+```bash
+nano ~/Mini_Projects/Network_Packet_Analyzer/packet_analyzer.py
+```
+
+#### 2. Replace the Existing Code
+
+Replace the existing code with the updated version that identifies protocols by name.
+
+```python
+from scapy.all import sniff, IP, TCP, UDP, ICMP, Raw
+from datetime import datetime
+
+packet_count = 0
+log_file = "packet_log.txt"
+
+def write_to_log(message):
+    with open(log_file, "a") as file:
+        file.write(message + "\n")
+
+def get_protocol_name(packet):
+    if TCP in packet:
+        return "TCP"
+    elif UDP in packet:
+        return "UDP"
+    elif ICMP in packet:
+        return "ICMP"
+    else:
+        return "Other"
+
+def analyze_packet(packet):
+    global packet_count
+
+    if IP in packet:
+        packet_count += 1
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+        source_ip = packet[IP].src
+        destination_ip = packet[IP].dst
+        protocol_name = get_protocol_name(packet)
+
+        packet_info = []
+
+        packet_info.append("\n--- Packet Captured ---")
+        packet_info.append(f"Packet Number   : {packet_count}")
+        packet_info.append(f"Timestamp       : {timestamp}")
+        packet_info.append(f"Source IP       : {source_ip}")
+        packet_info.append(f"Destination IP  : {destination_ip}")
+        packet_info.append(f"Protocol        : {protocol_name}")
+
+        if TCP in packet:
+            packet_info.append(f"Source Port     : {packet[TCP].sport}")
+            packet_info.append(f"Destination Port: {packet[TCP].dport}")
+
+        elif UDP in packet:
+            packet_info.append(f"Source Port     : {packet[UDP].sport}")
+            packet_info.append(f"Destination Port: {packet[UDP].dport}")
+
+        if Raw in packet:
+            payload = bytes(packet[Raw].load)
+            packet_info.append(f"Payload Length  : {len(payload)} bytes")
+            packet_info.append(f"Payload Data    : {payload[:100]!r}")
+
+        else:
+            packet_info.append("Payload Data    : No payload")
+
+        output = "\n".join(packet_info)
+
+        print(output)
+        write_to_log(output)
+
+print("Starting Network Packet Analyzer...")
+print("Capturing packets. Press Ctrl+C to stop.")
+print(f"Packet information will be saved to: {log_file}")
+
+sniff(prn=analyze_packet, store=False)
+```
+
+#### 3. Save the File
+
+In Nano:
+
+1. Press **Ctrl + O** to save the file.
+2. Press **Enter** to confirm the filename.
+3. Press **Ctrl + X** to exit Nano.
+
+![Human-readable protocol identification code](images/33-human-readable-protocol-code.png)
+
+*Screenshot 33: Nano editor showing the updated packet analyzer code with human-readable protocol identification.*
+
+#### What Was Added
+
+A new `get_protocol_name()` function identifies common protocols and returns their names instead of numerical protocol values.
+
+* **TCP** → TCP
+* **UDP** → UDP
+* **ICMP** → ICMP
+* **Other** → Other
+
+The analyzer now displays protocol names such as **ICMP**, **TCP**, and **UDP**, and the same information is also saved to `packet_log.txt`.
+
+---
+
+### Step 16 — Test Protocol Identification
+
+#### Objective
+
+Run the updated **Network Packet Analyzer** and verify that it correctly identifies common network protocols as **TCP, UDP, and ICMP** instead of displaying only numerical protocol values.
+
+#### 1. Start the Packet Analyzer
+
+Navigate to the project directory:
+
+```bash
+cd ~/Mini_Projects/Network_Packet_Analyzer
+```
+
+Run the analyzer:
+
+```bash
+sudo python3 packet_analyzer.py
+```
+
+The terminal should display:
+
+```text
+Starting Network Packet Analyzer...
+Capturing packets. Press Ctrl+C to stop.
+Packet information will be saved to: packet_log.txt
+```
+
+![Protocol identification enabled](images/34-packet-analyzer-running-protocol-identification.png)
+
+*Screenshot 34: Terminal showing the Network Packet Analyzer running with protocol identification enabled.*
+
+#### 2. Test ICMP Traffic
+
+Open a second terminal and generate ICMP traffic:
+
+```bash
+ping -c 4 8.8.8.8
+```
+
+The analyzer should identify the packets as:
+
+```text
+--- Packet Captured ---
+
+Packet Number   : 1
+Timestamp       : 2026-09-28 20:15:21
+Source IP       : 192.168.x.x
+Destination IP  : 8.8.8.8
+Protocol        : ICMP
+```
+
+The exact IP address and timestamp will depend on your network configuration.
+
+![Captured ICMP packets](images/35-captured-icmp-protocol.png)
+
+*Screenshot 35: Terminal showing captured ICMP packets identified by the analyzer.*
+
+#### 3. Test TCP Traffic
+
+In the second terminal, run:
+
+```bash
+curl https://example.com
+```
+
+The analyzer should identify TCP packets as:
+
+```text
+Protocol        : TCP
+Source Port     : XXXXX
+Destination Port: 443
+```
+
+![Captured TCP traffic](images/36-captured-tcp-protocol.png)
+
+*Screenshot 36: Terminal showing captured TCP traffic with the protocol identified as TCP.*
+
+#### 4. Test UDP Traffic
+
+Generate DNS traffic by running:
+
+```bash
+nslookup example.com
+```
+
+The analyzer should identify UDP packets as:
+
+```text
+Protocol        : UDP
+Source Port     : XXXXX
+Destination Port: 53
+```
+
+![Captured UDP DNS traffic](images/37-captured-udp-dns-protocol.png)
+
+*Screenshot 37: Terminal showing captured UDP/DNS traffic with the protocol identified as UDP.*
+
+#### 5. Stop the Analyzer
+
+Return to the analyzer terminal and press:
+
+```text
+Ctrl + C
+```
+
+#### 6. Verify the Log File
+
+Display the saved packet log:
+
+```bash
+cat packet_log.txt
+```
+
+The log should now contain protocol names such as:
+
+```text
+Protocol        : ICMP
+Protocol        : TCP
+Protocol        : UDP
+```
+
+![Packet log with protocol names](images/38-packet-log-human-readable-protocols.png)
+
+*Screenshot 38: Terminal displaying the saved packet log with human-readable protocol names.*
+
+#### Result
+
+The **Network Packet Analyzer** now provides more readable packet information by identifying common protocols directly as **ICMP, TCP, and UDP** instead of numerical protocol values.
+
+---
+
+### Step 17 — Add an Interactive Menu
+
+#### Objective
+
+Add a simple **command-line interactive menu** to the **Network Packet Analyzer**. The menu allows the user to start packet capture or exit the program instead of automatically starting the packet sniffer when the script is executed.
+
+#### 1. Open the Python File
+
+Run:
+
+```bash
+nano ~/Mini_Projects/Network_Packet_Analyzer/packet_analyzer.py
+```
+
+#### 2. Replace the Existing Code
+
+Replace the existing code with the final version that includes an interactive menu.
+
+```python
+from scapy.all import sniff, IP, TCP, UDP, ICMP, Raw
+from datetime import datetime
+
+packet_count = 0
+log_file = "packet_log.txt"
+
+def write_to_log(message):
+    with open(log_file, "a") as file:
+        file.write(message + "\n")
+
+def get_protocol_name(packet):
+    if TCP in packet:
+        return "TCP"
+    elif UDP in packet:
+        return "UDP"
+    elif ICMP in packet:
+        return "ICMP"
+    else:
+        return "Other"
+
+def analyze_packet(packet):
+    global packet_count
+
+    if IP in packet:
+        packet_count += 1
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+        source_ip = packet[IP].src
+        destination_ip = packet[IP].dst
+        protocol_name = get_protocol_name(packet)
+
+        packet_info = []
+
+        packet_info.append("\n--- Packet Captured ---")
+        packet_info.append(f"Packet Number   : {packet_count}")
+        packet_info.append(f"Timestamp       : {timestamp}")
+        packet_info.append(f"Source IP       : {source_ip}")
+        packet_info.append(f"Destination IP  : {destination_ip}")
+        packet_info.append(f"Protocol        : {protocol_name}")
+
+        if TCP in packet:
+            packet_info.append(f"Source Port     : {packet[TCP].sport}")
+            packet_info.append(f"Destination Port: {packet[TCP].dport}")
+
+        elif UDP in packet:
+            packet_info.append(f"Source Port     : {packet[UDP].sport}")
+            packet_info.append(f"Destination Port: {packet[UDP].dport}")
+
+        if Raw in packet:
+            payload = bytes(packet[Raw].load)
+            packet_info.append(f"Payload Length  : {len(payload)} bytes")
+            packet_info.append(f"Payload Data    : {payload[:100]!r}")
+
+        else:
+            packet_info.append("Payload Data    : No payload")
+
+        output = "\n".join(packet_info)
+
+        print(output)
+        write_to_log(output)
+
+def start_capture():
+    print("\nStarting Network Packet Analyzer...")
+    print("Capturing packets. Press Ctrl+C to stop.\n")
+
+    try:
+        sniff(prn=analyze_packet, store=False)
+    except KeyboardInterrupt:
+        print("\nPacket capture stopped.")
+
+def main():
+    while True:
+        print("\n===== Network Packet Analyzer =====")
+        print("1. Start Packet Capture")
+        print("2. Exit")
+
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            start_capture()
+
+        elif choice == "2":
+            print("Exiting Network Packet Analyzer...")
+            break
+
+        else:
+            print("Invalid choice. Please select 1 or 2.")
+
+if __name__ == "__main__":
+    main()
+```
+
+#### 3. Save the File
+
+In Nano:
+
+1. Press **Ctrl + O** to save the file.
+2. Press **Enter** to confirm the filename.
+3. Press **Ctrl + X** to exit Nano.
+
+![Interactive menu code](images/39-interactive-menu-code.png)
+
+*Screenshot 39: Nano editor showing the completed Network Packet Analyzer code with the interactive menu.*
+
+#### What Was Added
+
+The `main()` function provides a simple interactive command-line interface:
+
+```text
+===== Network Packet Analyzer =====
+
+1. Start Packet Capture
+2. Exit
+```
+
+* Selecting **1** starts packet capture.
+* Selecting **2** exits the program.
+* If an invalid option is entered, the program prompts the user to select a valid menu option.
+* Pressing **Ctrl + C** during packet capture safely stops the capture and returns control to the program.
+
+#### Interactive Menu Preview
+
+![Interactive menu](images/40-network-packet-analyzer-interactive-menu.png)
+
+*Screenshot 40: Terminal showing the interactive menu of the completed Network Packet Analyzer.*
+
+## ✅ Conclusion
+
+The **Network Packet Analyzer** project demonstrates the development of a practical network traffic analysis tool using **Python and Scapy** on Kali Linux. The analyzer can capture live network packets, identify source and destination IP addresses, recognize TCP, UDP, and ICMP protocols, display TCP/UDP port information, analyze basic payload data, and record packet numbers and timestamps.
+
+The project was further enhanced with **packet logging**, allowing captured information to be stored in `packet_log.txt` for later review. A **human-readable protocol identification** feature was added to make the captured data easier to understand, followed by an **interactive command-line menu** that allows users to start packet capture or exit the application.
+
+Overall, this project provided hands-on experience with **Python programming, Scapy, packet capture, network protocols, traffic analysis, logging, and basic cybersecurity monitoring concepts**. It also demonstrates how network traffic can be programmatically captured and analyzed in a controlled lab environment.
 
