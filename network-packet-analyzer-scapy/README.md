@@ -2,6 +2,31 @@
 
 A Python-based **Network Packet Analyzer** developed using **Scapy** on Kali Linux. The project captures live network traffic and progressively analyzes packets by identifying protocols, IP addresses, port numbers, payload information, packet numbers, and timestamps.
 
+## Table of Contents
+
+- [📖 Project Overview](#-project-overview)
+- [🎯 Project Objective](#-project-objective)
+- [🛠️ Tools and Technologies](#️-tools-and-technologies)
+- [⚙️ Project Implementation](#️-project-implementation)
+  - [Step 1 — Create the Project Directory](#step-1--create-the-project-directory)
+  - [Step 2 — Check Python Installation](#step-2--check-python-installation)
+  - [Step 3 — Install and Verify Scapy](#step-3--install-and-verify-scapy)
+  - [Step 4 — Create the Python Packet Analyzer File](#step-4--create-the-python-packet-analyzer-file)
+  - [Step 5 — Write the Basic Packet Capture Program](#step-5--write-the-basic-packet-capture-program)
+  - [Step 6 — Run and Test the Packet Analyzer](#step-6--run-and-test-the-packet-analyzer)
+  - [Step 7 — Improve Packet Analysis](#step-7--improve-packet-analysis)
+  - [Step 8 — Test TCP and UDP Packet Analysis](#step-8--test-tcp-and-udp-packet-analysis)
+  - [Step 9 — Add Payload Data Analysis](#step-9--add-payload-data-analysis)
+  - [Step 10 — Test Payload Data Analysis](#step-10--test-payload-data-analysis)
+  - [Step 11 — Add Packet Numbering and Timestamp](#step-11--add-packet-numbering-and-timestamp)
+  - [Step 12 — Test Packet Numbering and Timestamp](#step-12--test-packet-numbering-and-timestamp)
+  - [Step 13 — Save Packet Information to a Log File](#step-13--save-packet-information-to-a-log-file)
+  - [Step 14 — Test Packet Logging](#step-14--test-packet-logging)
+  - [Step 15 — Display Human-Readable Protocol Names](#step-15--display-human-readable-protocol-names)
+  - [Step 16 — Test Protocol Identification](#step-16--test-protocol-identification)
+  - [Step 17 — Add an Interactive Menu](#step-17--add-an-interactive-menu)
+- [✅ Conclusion](#-conclusion)
+
 ## 📖 Project Overview
 
 The **Network Packet Analyzer** is a Python-based network traffic analysis tool developed using **Scapy** on **Kali Linux**. The project captures live network packets and extracts useful information such as source and destination IP addresses, protocol names, TCP/UDP port numbers, payload information, packet numbers, and timestamps.
