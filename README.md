@@ -2,6 +2,13 @@
 
 A collection of beginner-friendly Python mini projects built and documented step by step on Kali Linux (VirtualBox). Each project has its own folder with a detailed README, code walkthrough, and screenshots.
 
+## Table of Contents
+
+- [📁 Projects](#projects)
+- [📖 Project Summaries](#project-summaries)
+- [🚀 Getting Started](#getting-started)
+- [💻 Environment](#environment)
+
 ## Projects
 
 | # | Project | Description | Tech |
@@ -13,16 +20,16 @@ A collection of beginner-friendly Python mini projects built and documented step
 
 ## Project Summaries
 
-### 🔐 Caesar Cipher Encryption and Decryption
+### 🔐 [Caesar Cipher Encryption and Decryption](./caesar-cipher-encryption-and-decryption)
 Takes a message and a shift value, shifts each letter forward to encrypt, and reverses the shift to decrypt. A good introduction to basic cryptography concepts.
 
-### 🖼️ Pixel Manipulation for Image Encryption
+### 🖼️ [Pixel Manipulation for Image Encryption](./pixel-manipulation)
 Uses Pillow to read an image, modify each pixel's RGB values with a key, and save the encrypted result. Decryption reverses the operation to restore the original image.
 
-### 🛡️ Password Complexity Checker
+### 🛡️ [Password Complexity Checker](./password-complexity-checker)
 A password-strength tool that checks five security criteria, calculates a score, and gives specific feedback on what's missing. Demonstrates string handling and conditional logic in a cybersecurity context.
 
-### 📡 Network Packet Analyzer
+### 📡 [Network Packet Analyzer](./network-packet-analyzer-scapy)
 Built with Scapy, this tool sniffs network packets and progressively adds protocol identification, TCP/UDP analysis, payload inspection, timestamps, and log-file output.
 
 ## Getting Started
@@ -30,7 +37,7 @@ Built with Scapy, this tool sniffs network packets and progressively adds protoc
 Clone the repository and install the required dependencies:
 
 ```bash
-git clone https://github.com/<your-username>/Mini-Projects.git
+git clone https://github.com/abdul0haleem/Mini-Projects.git
 cd Mini-Projects
 pip install -r requirements.txt
 ```

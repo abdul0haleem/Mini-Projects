@@ -1,5 +1,7 @@
 # Pixel Manipulation for Image Encryption
 
+[← Back to Mini-Projects](../README.md)
+
 ## Table of Contents
 
 - [📖 Project Overview](#project-overview)
@@ -934,6 +936,8 @@ Compare the decrypted image with the original test image to verify that the encr
 ### Result
 
 The encrypted image was successfully decrypted using the same encryption key. The program reversed the RGB pixel manipulation and generated `decrypted_image.png`. The decrypted image can now be compared with the original image to verify that the encryption and decryption process works correctly.
+
+[↑ Back to Top](#table-of-contents)
 
 ## ✅ Conclusion
 

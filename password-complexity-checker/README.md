@@ -1,5 +1,7 @@
 # Password Complexity Checker
 
+[← Back to Mini-Projects](../README.md)
+
 ## Table of Contents
 
 - [📖 Project Overview](#project-overview)
@@ -825,7 +827,9 @@ Password Strength: Strong
 
 *Screenshot 16: Terminal showing the completed Password Complexity Checker being tested with a strong password and displaying a **5 / 5** score and the **Password Strength: Strong** result.*
 
-✅ Conclusion
+[↑ Back to Top](#table-of-contents)
+
+## ✅ Conclusion
 
 The **Password Complexity Checker** project successfully demonstrates how Python can be used to evaluate password complexity based on multiple security requirements. The program checks for a minimum password length, uppercase letters, lowercase letters, numbers, and special characters.
 

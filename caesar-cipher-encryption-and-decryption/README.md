@@ -1,14 +1,16 @@
 # Caesar Cipher Encryption and Decryption Using Python
 
+[← Back to Mini-Projects](../README.md)
+
 ## Table of Contents
 
 - [📖 Project Overview](#project-overview)
 - [🎯 Project Objective](#project-objective)
 - [🛠️ Tools and Technologies](#tools-and-technologies)
 - [⚙️ Project Implementation](#project-implementation)
-  - [Step 1: Prepare Kali Linux](#step-1-prepare-kali-linux)
-  - [Step 2: Add Encrypt and Decrypt Options](#step-2-add-encrypt-and-decrypt-options)
-  - [Step 3: Add Input Validation, Loop, and Exit Option](#step-3-add-input-validation-loop-and-exit-option)
+  - [Step 1 — Prepare Kali Linux](#step-1--prepare-kali-linux)
+  - [Step 2 — Add Encrypt and Decrypt Options](#step-2--add-encrypt-and-decrypt-options)
+  - [Step 3 — Add Input Validation, Loop, and Exit Option](#step-3--add-input-validation-loop-and-exit-option)
 - [✅ Conclusion](#conclusion)
 
 ## 📖 Project Overview
@@ -41,7 +43,7 @@ The main objectives of this project are:
 
 ## ⚙️ Project Implementation
 
-## Step 1: Prepare Kali Linux
+## Step 1 — Prepare Kali Linux
 
 **Objective:** Prepare the Kali Linux environment for the Caesar Cipher project. Python 3 is verified, a dedicated project directory is created, and the Python source file is initialized.
 
@@ -112,7 +114,7 @@ The output should contain `caesar_cipher.py`.
 
 **Result:** The Kali Linux environment has been successfully prepared for the project. Python 3 has been verified, the dedicated project directory has been created, and the `caesar_cipher.py` source file is ready for development.
 
-## Step 2: Add Encrypt and Decrypt Options
+## Step 2 — Add Encrypt and Decrypt Options
 
 **Objective:** Implement the Caesar Cipher encryption and decryption functionality in Python. The program allows the user to select either Encrypt or Decrypt, enter a message, and provide a shift value.
 
@@ -227,7 +229,7 @@ The use of a negative shift allows the same function to perform both operations,
 
 **Result:** The Caesar Cipher program has been successfully implemented with separate Encrypt and Decrypt options. The program accepts a message and shift value from the user and correctly performs the selected operation while preserving spaces and other non-alphabetic characters.
 
-## Step 3: Add Input Validation, Loop, and Exit Option
+## Step 3 — Add Input Validation, Loop, and Exit Option
 
 **Objective:** Improve the Caesar Cipher program by adding a continuous menu, an Exit option, and input validation. These improvements allow the user to perform multiple encryption or decryption operations without restarting the program and prevent the program from crashing when an invalid shift value is entered.
 
@@ -387,6 +389,8 @@ except ValueError:
 This prevents the program from crashing if the user enters non-numeric input such as `abc`. Instead, the program displays an appropriate error message and returns to the menu.
 
 **Result:** The Caesar Cipher program has been enhanced with continuous execution, menu validation, shift-value validation, and an Exit option. The user can now perform multiple encryption and decryption operations within a single program session while invalid inputs are handled safely.
+
+[↑ Back to Top](#table-of-contents)
 
 ## ✅ Conclusion
 

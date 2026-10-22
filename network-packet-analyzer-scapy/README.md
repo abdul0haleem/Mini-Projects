@@ -1,5 +1,7 @@
 # Network Packet Analyzer using Python and Scapy
 
+[← Back to Mini-Projects](../README.md)
+
 A Python-based **Network Packet Analyzer** developed using **Scapy** on Kali Linux. The project captures live network traffic and progressively analyzes packets by identifying protocols, IP addresses, port numbers, payload information, packet numbers, and timestamps.
 
 ## Table of Contents
@@ -1010,7 +1012,7 @@ The analyzer should now provide a structured view of captured packets containing
 * **Payload Length**
 * **Payload Data**
 
-### Step 13 — Save Packet Information to a Log File
+## Step 13 — Save Packet Information to a Log File
 
 #### Objective
 
@@ -1104,7 +1106,7 @@ The program now creates a log file named `packet_log.txt` and stores captured pa
 
 ---
 
-### Step 14 — Test Packet Logging
+## Step 14 — Test Packet Logging
 
 #### Objective
 
@@ -1209,7 +1211,7 @@ The project directory should now contain at least:
 
 The **Network Packet Analyzer** now captures network packets, displays packet information in real time, records packet numbers and timestamps, analyzes TCP/UDP ports and payload data, and automatically saves the captured information to `packet_log.txt` for later review.
 
-### Step 15 — Display Human-Readable Protocol Names
+## Step 15 — Display Human-Readable Protocol Names
 
 #### Objective
 
@@ -1321,7 +1323,7 @@ The analyzer now displays protocol names such as **ICMP**, **TCP**, and **UDP**,
 
 ---
 
-### Step 16 — Test Protocol Identification
+## Step 16 — Test Protocol Identification
 
 #### Objective
 
@@ -1453,7 +1455,7 @@ The **Network Packet Analyzer** now provides more readable packet information by
 
 ---
 
-### Step 17 — Add an Interactive Menu
+## Step 17 — Add an Interactive Menu
 
 #### Objective
 
@@ -1597,6 +1599,8 @@ The `main()` function provides a simple interactive command-line interface:
 ![Interactive menu](images/40-network-packet-analyzer-interactive-menu.png)
 
 *Screenshot 40: Terminal showing the interactive menu of the completed Network Packet Analyzer.*
+
+[↑ Back to Top](#table-of-contents)
 
 ## ✅ Conclusion
 
