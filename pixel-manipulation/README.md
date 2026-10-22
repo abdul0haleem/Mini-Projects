@@ -2,10 +2,10 @@
 
 ## Table of Contents
 
-- [📖 Project Overview](#-project-overview)
-- [🎯 Project Objective](#-project-objective)
-- [🛠️ Tools and Technologies](#️-tools-and-technologies)
-- [⚙️ Project Implementation](#️-project-implementation)
+- [📖 Project Overview](#project-overview)
+- [🎯 Project Objective](#project-objective)
+- [🛠️ Tools and Technologies](#tools-and-technologies)
+- [⚙️ Project Implementation](#project-implementation)
   - [Step 1 — Prepare Kali Linux](#step-1--prepare-kali-linux)
   - [Step 2 — Install and Verify Pillow](#step-2--install-and-verify-pillow)
   - [Step 3 — Create the Python Program](#step-3--create-the-python-program)
@@ -14,7 +14,7 @@
   - [Step 6 — Add Encryption and Decryption Options](#step-6--add-encryption-and-decryption-options)
   - [Step 7 — Encrypt the Image](#step-7--encrypt-the-image)
   - [Step 8 — Decrypt the Image](#step-8--decrypt-the-image)
-- [✅ Conclusion](#-conclusion)
+- [✅ Conclusion](#conclusion)
 
 ## 📖 Project Overview
 
@@ -396,7 +396,7 @@ Verify the image using:
 
 ```bash
 cd Images/Test
-lsw
+ls
 ```
 
 The terminal should display the name of the test image.
@@ -611,7 +611,7 @@ From the project directory,
 
 Open the Python file:
 
-```bash id="x0f6kv"
+```bash
 nano pixel_manipulation.py
 ```
 
@@ -621,7 +621,7 @@ Keep the existing `encrypt_image()` and `decrypt_image()` functions from the pre
 
 Replace the existing `main()` function with:
 
-```python id="7v0g8m"
+```python
 def main():
     print("Pixel Manipulation for Image Encryption")
     print("---------------------------------------")
@@ -646,14 +646,14 @@ def main():
 
 Make sure the bottom of the program still contains:
 
-```python id="0x9e5p3"
+```python
 if __name__ == "__main__":
     main()
 ```
 
 The updated program now provides two options:
 
-```text id="2s8g4h"
+```text
 1. Encrypt Image
 2. Decrypt Image
 ```
@@ -664,7 +664,7 @@ The user can select the required operation and provide the input image path, enc
 
 In Nano:
 
-```text id="v9v1v6"
+```text
 Ctrl + O
 ```
 
@@ -672,7 +672,7 @@ Press **Enter** to save the file.
 
 Then exit Nano:
 
-```text id="z7q4cx"
+```text
 Ctrl + X
 ```
 

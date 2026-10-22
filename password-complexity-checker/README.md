@@ -2,10 +2,10 @@
 
 ## Table of Contents
 
-- [📖 Project Overview](#-project-overview)
-- [🎯 Project Objective](#-project-objective)
-- [🛠️ Tools and Technologies](#️-tools-and-technologies)
-- [⚙️ Project Implementation](#️-project-implementation)
+- [📖 Project Overview](#project-overview)
+- [🎯 Project Objective](#project-objective)
+- [🛠️ Tools and Technologies](#tools-and-technologies)
+- [⚙️ Project Implementation](#project-implementation)
   - [Step 1 — Create the Project Directory](#step-1--create-the-project-directory)
   - [Step 2 — Create the Python File](#step-2--create-the-python-file)
   - [Step 3 — Take Password Input from the User](#step-3--take-password-input-from-the-user)
@@ -16,7 +16,7 @@
   - [Step 8 — Determine the Password Strength](#step-8--determine-the-password-strength)
   - [Step 9 — Provide Feedback for Weak Passwords](#step-9--provide-feedback-for-weak-passwords)
   - [Step 10 — Test the Password Complexity Checker](#step-10--test-the-password-complexity-checker)
-- [✅ Conclusion](#-conclusion)
+- [✅ Conclusion](#conclusion)
 
 ## 📖 Project Overview
 
@@ -304,7 +304,7 @@ Add checks to determine whether the password contains both **uppercase** and **l
 
 From inside the project directory, run:
 
-```bash id="qv5g9u"
+```bash
 nano password_checker.py
 ```
 
@@ -312,7 +312,7 @@ nano password_checker.py
 
 Replace the existing code with:
 
-```python id="yq2z1r"
+```python
 password = input("Enter your password: ")
 
 if len(password) >= 8:
@@ -345,13 +345,13 @@ In Nano:
 
 Run:
 
-```bash id="n5o6wl"
+```bash
 python3 password_checker.py
 ```
 
 Test it with:
 
-```text id="qg3z1m"
+```text
 Enter your password: TestPassword
 
 Length requirement: Passed
@@ -373,7 +373,7 @@ Add checks to determine whether the password contains at least one **number** an
 
 From inside the project directory, run:
 
-```bash id="s0l8ec"
+```bash
 nano password_checker.py
 ```
 
@@ -381,7 +381,7 @@ nano password_checker.py
 
 Replace the existing code with:
 
-```python id="r9rj6k"
+```python
 password = input("Enter your password: ")
 
 if len(password) >= 8:
@@ -424,13 +424,13 @@ In Nano:
 
 Run:
 
-```bash id="4v6qrf"
+```bash
 python3 password_checker.py
 ```
 
 Test it with:
 
-```text id="c4qz9b"
+```text
 Enter your password: TestPassword123!
 
 Length requirement: Passed
@@ -553,7 +553,7 @@ Use the password strength score to classify the password as **Weak, Moderate, or
 
 From inside the project directory, run:
 
-```bash id="p4r5qk"
+```bash
 nano password_checker.py
 ```
 
@@ -561,7 +561,7 @@ nano password_checker.py
 
 Add the following code at the end of the existing program:
 
-```python id="0q8s8d"
+```python
 if score <= 2:
     print("Password Strength: Weak")
 
@@ -592,13 +592,13 @@ In Nano:
 
 Run:
 
-```bash id="8j3j0m"
+```bash
 python3 password_checker.py
 ```
 
 For example:
 
-```text id="d3w0kx"
+```text
 Enter your password: TestPassword123!
 
 Length requirement: Passed
@@ -629,7 +629,7 @@ Instead of only displaying the score, the program will tell the user what needs 
 
 From inside the project directory, run:
 
-```bash id="j6q1ye"
+```bash
 nano password_checker.py
 ```
 
@@ -637,7 +637,7 @@ nano password_checker.py
 
 Replace the existing code with the following:
 
-```python id="f5g7q3"
+```python
 password = input("Enter your password: ")
 
 score = 0
@@ -713,19 +713,19 @@ In Nano:
 
 Run:
 
-```bash id="rj3j9x"
+```bash
 python3 password_checker.py
 ```
 
 Test the program with a weak password such as:
 
-```text id="xj4c8f"
+```text
 Enter your password: password
 ```
 
 You should see feedback similar to:
 
-```text id="7qf2h5"
+```text
 Length requirement: Passed
 Uppercase letter requirement: Failed
 Lowercase letter requirement: Passed

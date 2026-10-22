@@ -1,0 +1,7 @@
+# Python dependencies for Mini-Projects
+
+# Pixel Manipulation for Image Encryption
+Pillow>=10.0.0
+
+# Network Packet Analyzer
+scapy>=2.5.0

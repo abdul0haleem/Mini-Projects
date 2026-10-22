@@ -25,6 +25,16 @@ A password-strength tool that checks five security criteria, calculates a score,
 ### 📡 Network Packet Analyzer
 Built with Scapy, this tool sniffs network packets and progressively adds protocol identification, TCP/UDP analysis, payload inspection, timestamps, and log-file output.
 
+## Getting Started
+
+Clone the repository and install the required dependencies:
+
+```bash
+git clone https://github.com/<your-username>/Mini-Projects.git
+cd Mini-Projects
+pip install -r requirements.txt
+```
+
 ## Environment
 
 - **OS:** Kali Linux
