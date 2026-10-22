@@ -4,10 +4,10 @@
 
 ## Table of Contents
 
-- [📖 Project Overview](#project-overview)
-- [🎯 Project Objective](#project-objective)
-- [🛠️ Tools and Technologies](#tools-and-technologies)
-- [⚙️ Project Implementation](#project-implementation)
+- [📖 Project Overview](#-project-overview)
+- [🎯 Project Objective](#-project-objective)
+- [🛠️ Tools and Technologies](#️-tools-and-technologies)
+- [⚙️ Project Implementation](#️-project-implementation)
   - [Step 1 — Create the Project Directory](#step-1--create-the-project-directory)
   - [Step 2 — Create the Python File](#step-2--create-the-python-file)
   - [Step 3 — Take Password Input from the User](#step-3--take-password-input-from-the-user)
@@ -18,7 +18,7 @@
   - [Step 8 — Determine the Password Strength](#step-8--determine-the-password-strength)
   - [Step 9 — Provide Feedback for Weak Passwords](#step-9--provide-feedback-for-weak-passwords)
   - [Step 10 — Test the Password Complexity Checker](#step-10--test-the-password-complexity-checker)
-- [✅ Conclusion](#conclusion)
+- [✅ Conclusion](#-conclusion)
 
 ## 📖 Project Overview
 

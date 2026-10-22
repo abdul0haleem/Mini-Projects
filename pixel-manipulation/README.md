@@ -4,10 +4,10 @@
 
 ## Table of Contents
 
-- [📖 Project Overview](#project-overview)
-- [🎯 Project Objective](#project-objective)
-- [🛠️ Tools and Technologies](#tools-and-technologies)
-- [⚙️ Project Implementation](#project-implementation)
+- [📖 Project Overview](#-project-overview)
+- [🎯 Project Objective](#-project-objective)
+- [🛠️ Tools and Technologies](#️-tools-and-technologies)
+- [⚙️ Project Implementation](#️-project-implementation)
   - [Step 1 — Prepare Kali Linux](#step-1--prepare-kali-linux)
   - [Step 2 — Install and Verify Pillow](#step-2--install-and-verify-pillow)
   - [Step 3 — Create the Python Program](#step-3--create-the-python-program)
@@ -16,7 +16,7 @@
   - [Step 6 — Add Encryption and Decryption Options](#step-6--add-encryption-and-decryption-options)
   - [Step 7 — Encrypt the Image](#step-7--encrypt-the-image)
   - [Step 8 — Decrypt the Image](#step-8--decrypt-the-image)
-- [✅ Conclusion](#conclusion)
+- [✅ Conclusion](#-conclusion)
 
 ## 📖 Project Overview
 

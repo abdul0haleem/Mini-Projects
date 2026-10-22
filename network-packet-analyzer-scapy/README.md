@@ -6,10 +6,10 @@ A Python-based **Network Packet Analyzer** developed using **Scapy** on Kali Lin
 
 ## Table of Contents
 
-- [📖 Project Overview](#project-overview)
-- [🎯 Project Objective](#project-objective)
-- [🛠️ Tools and Technologies](#tools-and-technologies)
-- [⚙️ Project Implementation](#project-implementation)
+- [📖 Project Overview](#-project-overview)
+- [🎯 Project Objective](#-project-objective)
+- [🛠️ Tools and Technologies](#️-tools-and-technologies)
+- [⚙️ Project Implementation](#️-project-implementation)
   - [Step 1 — Create the Project Directory](#step-1--create-the-project-directory)
   - [Step 2 — Check Python Installation](#step-2--check-python-installation)
   - [Step 3 — Install and Verify Scapy](#step-3--install-and-verify-scapy)
@@ -27,7 +27,7 @@ A Python-based **Network Packet Analyzer** developed using **Scapy** on Kali Lin
   - [Step 15 — Display Human-Readable Protocol Names](#step-15--display-human-readable-protocol-names)
   - [Step 16 — Test Protocol Identification](#step-16--test-protocol-identification)
   - [Step 17 — Add an Interactive Menu](#step-17--add-an-interactive-menu)
-- [✅ Conclusion](#conclusion)
+- [✅ Conclusion](#-conclusion)
 
 ## 📖 Project Overview
 
